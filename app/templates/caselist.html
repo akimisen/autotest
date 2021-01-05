@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+{% block title %}caselist{% endblock %}
+{% block page_content %}
+<div class="page-header">
+  <h1>用例列表</h1>
+</div>
+<div class="table-content">
+<table class="table table-bordered">
+  <tr>
+    <th>编号</th>
+    <th>用例名称</th>
+    <th>用例模板</th>
+    <th>执行</th>
+  </tr>
+    {% for case in cases %}
+      <tr>
+        <td>{{ case.case_id }}</td>
+        <td>{{ case.case_description }}</td>
+        <td>{{ case.case_model }}</td>
+        <td><a href="{{ url_for('task.run_case',case_id=case.case_id) }}">执行</a></td>
+      </tr>
+    {% endfor %}
+  <tr>
+</table>
+<div class="add-case-button"><a href="{{ url_for('case.case_editor',case_model='api') }}">新增接口测试用例</a></div>
+</div>
+{% endblock %}

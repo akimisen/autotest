@@ -1,0 +1,10 @@
+https://api.github.com/repos/octocat/hello-world/branches
+
+https://api.github.com/users/akimisen/repos
+
+"Authorization: token OAUTH-TOKEN"
+curl -H "Authorization: token OAUTH-TOKEN" https://api.github.com/org/abc
+{
+  "message": "Bad credentials",
+  "documentation_url": "https://docs.github.com/rest"
+}
