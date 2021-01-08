@@ -19,7 +19,7 @@ web平台的实现代码在app\目录下
 ##### 快速部署：
 ```
 git clone this_repo
-cd project_dir
+cd autotest
 virtualenv venv
 pip install -r requirements.txt
 for mac/linux:  (仅在mac上做过测试...)
