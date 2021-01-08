@@ -21,9 +21,9 @@ web平台的实现代码在app\目录下
 git clone this_repo
 cd autotest
 virtualenv venv
+source venv/bin/activate  
 pip install -r requirements.txt
-for mac/linux:  (仅在mac上做过测试...)
-source venv/bin/activate   
+*for mac/linux:  (仅在mac上做过测试...)
 sh build.sh     (启动本地调试服务器，访问localhost:5000/login)
 ```
 ##### 有问题请联系: 
