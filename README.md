@@ -24,7 +24,7 @@ virtualenv venv
 pip install -r requirements.txt
 for mac/linux:  (仅在mac上做过测试...)
 source venv/bin/activate   
-sh build.sh     (本地调试服务器: 访问localhost:5000/login)
+sh build.sh     (启动本地调试服务器，访问localhost:5000/login)
 ```
 ##### 有问题请联系: 
   QQ:124394105
