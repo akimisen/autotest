@@ -17,13 +17,14 @@
 ## 项目结构：
 (app/路径下) <br>
 * models.py 定义数据库的ORM模型，通过表名把数据库对象映射为一个python类，用这个类实现常用的增删查改 <br>
-* views/\*.py 定义视图函数，每个函数处理一个路由。按照菜单分类：user-用户登录及权限管理, case-用例管理 <br>
-* templates/\*.html 存放用于前端展示的模板。base.html定义基本布局，其他页面继承base，以base的<main>节点为根节点，渲染页面的个性化组件 <br>
-
+* views/\*.py 定义视图函数(controller层)，每个函数处理一个路由。按照菜单分类：user-用户登录及权限管理, case-用例管理 <br>
+* templates/\*.html 存放模板文件(view)。base.html定义基本布局，其他页面继承base，以base的<main>节点为根节点，渲染页面的个性化组件 <br>
+* components/\*.py 存放复杂组件，比如表单。
+  
 ## demo截图展示：
 https://pan.baidu.com/s/1hDtngYp2woC3TziMfFdbyg 提取码: fhgt
 
-## 快速部署：
+## 运行demo：
 ```
 git clone git@github.com:akimisen/autotest.git
 cd autotest
@@ -46,12 +47,12 @@ pip install -r requirements.txt
 
 ### 项目包含两个简单的测试脚本：
 
-1. test-http.py  （http接口测试，脚本可以直接运行）
-2. test-webui.py 简单实现了基于关键字驱动+数据驱动的自动化测试（还需要稍作调试，大致的逻辑已经梳理好，详见代码注释）<br>
+1. test-http.py   http接口测试
+2. test-webui.py  简单实现了基于关键字驱动+数据驱动的UI自动化测试<br>
 
 测试平台维护的数据能够和这样的测试脚本实现联动
 
 ### 备注：
 
-1. 目前web前端部分采用的技术(只支持jquery)不方便做交互，正在用Vue进行重构。
+1. 目前web前端部分采用的技术(只支持jquery)不方便做交互，正在用React进行重构。
 2. 项目结构较乱，后续会优化
