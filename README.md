@@ -24,7 +24,7 @@
 ## demo截图展示：
 https://pan.baidu.com/s/1hDtngYp2woC3TziMfFdbyg 提取码: fhgt
 
-## 快速部署：
+## 运行demo：
 ```
 git clone git@github.com:akimisen/autotest.git
 cd autotest
@@ -47,8 +47,8 @@ pip install -r requirements.txt
 
 ### 项目包含两个简单的测试脚本：
 
-1. test-http.py  （http接口测试，脚本可以直接运行）
-2. test-webui.py 简单实现了基于关键字驱动+数据驱动的自动化测试（还需要稍作调试，大致的逻辑已经梳理好，详见代码注释）<br>
+1. test-http.py   http接口测试
+2. test-webui.py  简单实现了基于关键字驱动+数据驱动的UI自动化测试<br>
 
 测试平台维护的数据能够和这样的测试脚本实现联动
 
