@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% from 'bootstrap/form.html' import render_form_row %}
+
+{% block content %}
+
+<div class="container">
+    <div class="page-header" style="margin-top:45px;margin-bottom:10px">
+        {% if case_model=='http' %}
+        <h5>新建接口测试用例</h5> <br>
+        {% elif case_model=='web' %}
+        <h5>新建WebUI测试用例</h5> <br>
+        {% endif %}
+    </div>
+    <div class="input-group-sm  mb-5" style="margin-top:20px;line-height: 0.3;">
+        <form method="post">
+            {{ form.csrf_token }}
+            {{ render_form_row([form.project_id], col_class_default='col-md-6') }}
+            {{ render_form_row([form.case_name], col_class_default='col-md-6') }}
+            {{ render_form_row([form.case_desc], col_class_default='col-md-6') }}
+            {{ render_form_row([form.url, form.method], col_map={'url': 'col-md-4', 'method': 'col-md-2'}) }}
+            {{ render_form_row([form.headers], col_class_default='col-md-6') }}
+            {{ render_form_row([form.params], col_class_default='col-md-6') }}
+            {{ render_form_row([form.data], col_class_default='col-md-6') }}
+            {{ render_form_row([form.submit],col_class_default='col-md-2') }}
+        </form>
+    </div>
+</div>
+
+{% endblock %}
