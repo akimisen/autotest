@@ -1,0 +1,60 @@
+test_requests (__main__.MyTestCase) ... 
+======================================================================
+FAIL: test_requests (__main__.MyTestCase) (step_id=0, url='http://www.baidu.com', headers={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/qovop/Projects/autotest/testdemo/test-http.py", line 15, in test_requests
+    self.assertEqual(str(res.status_code),step['status_code'])
+AssertionError: '200' != '123'
+- 200
++ 123
+
+
+======================================================================
+FAIL: test_requests (__main__.MyTestCase) (step_id=1, url='http://www.baidu.com', headers={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/qovop/Projects/autotest/testdemo/test-http.py", line 15, in test_requests
+    self.assertEqual(str(res.status_code),step['status_code'])
+AssertionError: '200' != '123'
+- 200
++ 123
+
+
+======================================================================
+FAIL: test_requests (__main__.MyTestCase) (step_id=2, url='http://www.baidu.com', headers={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/qovop/Projects/autotest/testdemo/test-http.py", line 15, in test_requests
+    self.assertEqual(str(res.status_code),step['status_code'])
+AssertionError: '200' != '123'
+- 200
++ 123
+
+
+======================================================================
+FAIL: test_requests (__main__.MyTestCase) (step_id=3, url='http://www.baidu.com', headers={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/qovop/Projects/autotest/testdemo/test-http.py", line 15, in test_requests
+    self.assertEqual(str(res.status_code),step['status_code'])
+AssertionError: '200' != '123'
+- 200
++ 123
+
+
+======================================================================
+FAIL: test_requests (__main__.MyTestCase) (step_id=4, url='http://www.baidu.com', headers={})
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/qovop/Projects/autotest/testdemo/test-http.py", line 15, in test_requests
+    self.assertEqual(str(res.status_code),step['status_code'])
+AssertionError: '200' != '123'
+- 200
++ 123
+
+
+----------------------------------------------------------------------
+Ran 1 test in 0.164s
+
+FAILED (failures=5)
