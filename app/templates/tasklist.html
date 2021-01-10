@@ -1,27 +1,14 @@
 {% extends "base.html" %}
-{% import "bootstrap/wtf.html" as wtf %}
-{% block title %}caselist{% endblock %}
-{% block page_content %}
-<div class="page-header">
-  <h1>任务列表</h1>
+{% from 'bootstrap/table.html' import render_table %}
+
+{% block title %} tasklist {% endblock %}
+
+{% block content %}
+
+<div class="table-header">
+<h1>任务列表</h1>
 </div>
-<table class="table table-bordered">
-  <tr>
-    <th>任务编号</th>
-    <th>任务名称</th>
-    <th>环境变量</th>
-    <th>更新时间</th>
-    <th>执行状态</th>
-  </tr>
-    {% for task in tasks %}
-      <tr>
-        <td>{{ task.task_id }}</td>
-        <td>{{ task.task_name }}</td>
-        <td>  </td>     
-        <td>{{ task.task_time }}</td>
-        <td>  </td>
-      </tr>
-    {% endfor %}
-  <tr>
-</table>
+<h1>开发中</h1>
+<a href="{{ url_for('case.query_user_cases') }}">返回</a>
+
 {% endblock %}

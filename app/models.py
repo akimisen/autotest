@@ -1,7 +1,7 @@
 from datetime import datetime
 # import hashlib
 from werkzeug.security import generate_password_hash, check_password_hash
-from flask import current_app, request, url_for
+from flask import request, url_for
 from flask_login import UserMixin
 #from app.exceptions import ValidationError
 from . import db, login_manager
@@ -21,9 +21,9 @@ class User(UserMixin,db.Model):
   def id(self):
     return self.user_id
   
-  @id.setter
-  def id(self):
-    self.id=self.user_id
+  # @id.setter
+  # def id(self):
+  #   self.id=self.user_id
 
   @property
   def password(self):
@@ -44,15 +44,16 @@ class CaseInfo(db.Model):
   __tablename__='case_info'
   case_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
   case_name = db.Column(db.String(50))
-  user_id = db.Column(db.Integer, nullable=False)
+  case_desc = db.Column(db.Text(100))
+  case_model = db.Column(db.Enum('http','web','app'))
+  owner_id = db.Column(db.Integer, nullable=False)
   group_id = db.Column(db.Integer, nullable=False)
   project_id = db.Column(db.Integer, nullable=False)
-  updated_time = db.Column(db.DateTime)
-  case_description = db.Column(db.Text(100))
-  case_model = db.Column(db.Enum('http','web_ui','app_ui'))
-
+  created_at = db.Column(db.DateTime)
+  updated_at = db.Column(db.DateTime)
+  
   __mapper_args__ = {
-    "order_by": updated_time.desc()
+    "order_by": updated_at.desc()
   }
   # @property
   # def info(self):
@@ -79,9 +80,17 @@ class RestCase(db.Model):
   token=db.Column(db.String(128))
   token_expire=db.Column(db.DateTime)
 
-# class UICase(db.Model):
-#   __tablename__='ui_case'
-
+class WebCase(db.Model):
+  __tablename__='web_case'
+  case_id=db.Column(db.Integer, primary_key=True, autoincrement=True)
+  url=db.Column(db.String(100), nullable=False)
+  method=db.Column(db.Enum('GET','POST','OPTION','DELETE'), server_default='GET')
+  # auth=db.Column(db.Boolean)
+  data=db.Column(db.JSON)
+  headers=db.Column(db.JSON)
+  params=db.Column(db.JSON)
+  token=db.Column(db.String(128))
+  token_expire=db.Column(db.DateTime)
 class Department(db.Model):
   __tablename__ = 'department'
   department_id = db.Column(db.Integer, primary_key=True, autoincrement=True)
