@@ -54,5 +54,5 @@ pip install -r requirements.txt
 
 ### 备注：
 
-1. 目前web前端部分采用的技术(只支持jquery)不方便做交互，正在用Vue进行重构。
+1. 目前web前端部分采用的技术(只支持jquery)不方便做交互，正在用React进行重构。
 2. 项目结构较乱，后续会优化
