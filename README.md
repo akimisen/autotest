@@ -17,8 +17,8 @@
 ## 项目结构：
 (app/路径下) <br>
 * models.py 定义数据库的ORM模型，通过表名把数据库对象映射为一个python类，用这个类实现常用的增删查改 <br>
-* views/\*.py 定义视图函数，每个函数处理一个路由。按照菜单分类：user-用户登录及权限管理, case-用例管理 <br>
-* templates/\*.html 存放用于前端展示的模板。base.html定义基本布局，其他页面继承base，以base的<main>节点为根节点，渲染页面的个性化组件 <br>
+* views/\*.py 定义视图函数(controller层)，每个函数处理一个路由。按照菜单分类：user-用户登录及权限管理, case-用例管理 <br>
+* templates/\*.html 存放模板文件(view)。base.html定义基本布局，其他页面继承base，以base的<main>节点为根节点，渲染页面的个性化组件 <br>
 * components/\*.py 存放复杂组件，比如表单。
   
 ## demo截图展示：
