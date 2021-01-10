@@ -25,7 +25,7 @@ https://pan.baidu.com/s/1hDtngYp2woC3TziMfFdbyg 提取码: fhgt
 
 ## 快速部署：
 ```
-git clone this_repo
+git clone git@github.com:akimisen/autotest.git
 cd autotest
 virtualenv venv
 source venv/bin/activate (windows: venv/scripts/activate.bat) 
