@@ -48,7 +48,7 @@ pip install -r requirements.txt
 ### 项目包含两个简单的测试脚本：
 
 1. test-http.py   http接口测试
-2. test-webui.py  简单实现了基于关键字驱动+数据驱动的UI自动化测试<br>
+2. test-webui.py  UI自动化测试 (部分为伪代码，写了大致思路..)<br>
 
 测试平台维护的数据能够和这样的测试脚本实现联动
 
