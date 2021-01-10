@@ -1,33 +1,44 @@
 # Part 1 
 ## autotest-基于web的测试管理平台
-## 功能模块：
 
+## 功能模块：
  *   用户系统 <br>
-  <font size=1>--已实现：注册登录、菜单权限管理 </font>
+  --已实现：注册登录、菜单权限管理
  *   项目管理
   （对接项目管理平台，根据需求集成常用功能)
  *   环境管理
   （对接运维平台，根据需求集成常用功能)
  *   用例管理  <br>
- --已实现：支持在web平台录入测试用例并提交到后台，实现测试数据的持久化。**便于团队协作、复现历史问题** <br>
- --开发中：http接口支持调试、mock; ui测试任务支持监控; 支持用例批量导入 <br>
+  --已实现：支持在web平台录入测试用例并提交到后台，实现测试数据的持久化。**便于团队协作、复现历史问题** <br>
+  --开发中：http接口支持调试、mock; ui测试任务支持监控; 支持用例批量导入 <br>
 
 ## 技术栈：
 `python3.7` `flask` `sqlalchemy` `bootstrap`
 
-*web平台的实现代码在app\目录下
-## demo录屏演示：
+## 项目结构：
+* (app/路径下)
+models.py 定义数据库的ORM模型。并用类方法实现常用的增删查改操作
+views/\*.py 定义页面对应的视图函数。每个函数对应一个路由。按照菜单分类：user-用户, project-项目，case-用例...
+template/\*.html 存放页面展示用到的模板。base.html定义导航栏等基本布局，其他页面继承base，以base模板的<main>节点为根节点渲染页面的个性化组件 <br>
+
+## demo截图展示：
+https://pan.baidu.com/s/1hDtngYp2woC3TziMfFdbyg 提取码: fhgt
 
 ## 快速部署：
 ```
 git clone this_repo
 cd autotest
 virtualenv venv
-source venv/bin/activate  
+source venv/bin/activate (windows: venv/scripts/activate.bat) 
 pip install -r requirements.txt
-*for mac/linux:  (只在mac上做了测试...)
-sh build.sh     (启动本地调试服务器，访问localhost:5000/login)
+*  for mac/linux:
+  sh build.sh    
+*  for windows cmd:
+  set FLASK_APP=demo
+  flask run
 ```
+访问localhost:5000/login
+
 ### 有问题请联系: 
   qq: 124394105(@qq.com) <br>
   vx: akimisen <br>
@@ -43,6 +54,5 @@ sh build.sh     (启动本地调试服务器，访问localhost:5000/login)
 
 ### 备注：
 
-1. 目前web前端部分采用的flask-bootstrap插件不方便做交互，仅实现了增+查，难以实现对数据进行筛选、排序、分页等操作。正在用Vue进行重构，框架已经搭好。
-2. 项目结构混乱，后续会优化
-3. 各种优化工作预计还需5~7天
+1. 目前web前端部分采用的技术(只支持jquery)不方便做交互，正在用Vue进行重构。
+2. 项目结构较乱，后续会优化
