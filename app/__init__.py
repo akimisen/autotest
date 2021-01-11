@@ -4,12 +4,13 @@ from flask_bootstrap import Bootstrap
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
-import pymysql
+# import pymysql
+from flask_migrate import Migrate
 
 #init flask with plugins
 bootstrap = Bootstrap()
 moment = Moment()
-pymysql.install_as_MySQLdb()
+# pymysql.install_as_MySQLdb()
 db = SQLAlchemy()
 login_manager = LoginManager()
 login_manager.login_view = 'user.login'
@@ -20,7 +21,8 @@ def create_app():
   # from config import config
   # app.config.from_object(config[config_name])
   # config[config_name].init_app(app)
-  app.config['SQLALCHEMY_DATABASE_URI']='mysql://tracy:Test_123@localhost/test'
+  # app.config['SQLALCHEMY_DATABASE_URI']='mysql://tracy:Test_123@localhost/test'
+  app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///app.db'
   app.config['SQLALCHEMY_TRACK_MODIFICATIONS']=False
   app.config['SECRET_KEY']='default key'
   app.config['BOOTSTRAP_BOOTSWATCH_THEME'] = 'cosmo'
@@ -28,6 +30,7 @@ def create_app():
   bootstrap.init_app(app)
   moment.init_app(app)
   db.init_app(app)
+  migrate = Migrate(app, db)
   login_manager.init_app(app)
   from .views import user,case,task,project,env
   from .api import routes as api,mock

@@ -50,7 +50,7 @@ def add_case_http():
     else:
       try:
         caseinfo = CaseInfo(group_id=user.group_id,owner_id=user.user_id,project_id=form.project_id.data,case_name=form.case_name.data,case_model=case_model,case_desc=form.case_desc.data,updated_at=datetime.now(),created_at=datetime.now())
-        restcase = RestCase(url=form.url.data,method=form.method.data,params=form.params.data,headers=form.headers.data)
+        restcase = RestCase(url=form.url.data,method=form.method.data.lable,params=form.params.data,headers=form.headers.data)
         db.session.add(caseinfo)
         db.session.add(restcase)
         db.session.commit()
